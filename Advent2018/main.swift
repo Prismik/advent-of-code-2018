@@ -8,5 +8,6 @@
 
 import Foundation
 
-print("Hello, World!")
-
+//Day2().solve()
+//Day3().solve()
+Day4().solve()
