@@ -9,8 +9,8 @@
 import Foundation
 
 extension String {
-    func index(at: Int) -> Index {
-        return self.index(startIndex, offsetBy: at)
+    func index(at offset: Int) -> Index {
+        return self.index(startIndex, offsetBy: offset)
     }
 
     func substring(from: Int) -> String {
