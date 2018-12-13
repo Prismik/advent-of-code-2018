@@ -53,6 +53,10 @@ class Day4: Day {
             return sleepSchedule.max(by: { $0.value < $1.value })?.key ?? -1
         }
 
+        var mostSleptAtOccurence: Int {
+            return sleepSchedule.max(by: { $0.value < $1.value })?.value ?? -1
+        }
+
         private var sleepSchedule: [Int: Int] = [:]
         private var sleeping: (value: Bool, from: Int) = (value: false, from: 0)
 
@@ -104,5 +108,8 @@ class Day4: Day {
 
         guard let weakestGuard = guards.max(by: { $0.totalMinutesOfSleep < $1.totalMinutesOfSleep }) else { return }
         print("Sneaky computation of guard \(weakestGuard.identifier) is \(weakestGuard.identifier * weakestGuard.minuteMostSleptAt)")
+
+        guard let drowsyGuard = guards.max(by: { $0.mostSleptAtOccurence < $1.mostSleptAtOccurence }) else { return }
+        print("Sneaky computation of drowsy guard \(drowsyGuard.identifier) is \(drowsyGuard.identifier * drowsyGuard.minuteMostSleptAt)")
     }
 }
